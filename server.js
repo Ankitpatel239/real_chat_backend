@@ -302,7 +302,7 @@ io.on('connection', (socket) => {
     }
   });
 
-  socket.on('end-call', async (data) => {
+  socket.on('end-call', async () => {
     if (socket.roomCode) {
       activeCalls.delete(socket.roomCode);
       
@@ -342,7 +342,7 @@ io.on('connection', (socket) => {
           [socket.id]
         );
 
-        const remainingUsers = await dbAll(
+        await dbAll(
           'SELECT COUNT(*) as count FROM users WHERE room_code = ? AND is_online = 1',
           [socket.roomCode]
         );
