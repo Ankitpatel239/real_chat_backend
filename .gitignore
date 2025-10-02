@@ -1,4 +1,8 @@
-./webrtc.db
-./webrtc.db-shm
-./webrtc.db-wal
+
 package-lock.json
+vscode/
+webrtc.db
+webrtc.db-shm
+webrtc.db-wal
+node_modules/
+
