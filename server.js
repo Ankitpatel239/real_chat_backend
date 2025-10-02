@@ -8,9 +8,11 @@ const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const server = http.createServer(app);
+//allowed origins for socket.io and for production use environment variable
+const allowedOrigins = process.env.NODE_ENV === 'production' ? [process.env.CLIENT_URL] : ['http://localhost:3000'];
 const io = socketIo(server, {
   cors: {
-    origin: "*",
+    origin: allowedOrigins,
     methods: ["GET", "POST"]
   }
 });
