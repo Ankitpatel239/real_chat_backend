@@ -1,9 +1,9 @@
 .vscode/
-.webrtc.db
-.webrtc.db-shm
-.webrtc.db-wal
+webrtc.db
+webrtc.db-shm
+webrtc.db-wal
 node_modules/
 dist/
-.package-lock.json
+package-lock.json
 .env
 *.log
